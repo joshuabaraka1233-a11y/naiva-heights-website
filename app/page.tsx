@@ -54,6 +54,13 @@ export default function Home() {
         <button className="menu-toggle" aria-label="Toggle navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X/> : <Menu/>}</button>
       </header>
 
+      <section className="trust-bar" aria-label="Guest rating">
+        <div className="trust-inner">
+          <div className="trust-rating"><span className="trust-stars" aria-label="4.3 out of 5 stars">★★★★★</span><strong>4.3/5</strong><span className="trust-divider">|</span><span>66 Google reviews</span></div>
+          <a href="https://wa.me/254798940055?text=Hello%20Naiva%20Heights%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noreferrer"><span className="online-dot"/> Chat with Naiva Heights <ArrowRight size={14}/></a>
+        </div>
+      </section>
+
       <section className="hero">
         <div className="hero-image" />
         <div className="hero-shade" />
@@ -81,6 +88,8 @@ export default function Home() {
       <section className="location-section" id="location"><div className="location-photo"/><div className="location-copy"><p className="eyebrow light">FIND YOUR WAY HERE</p><h2>Your Naivasha<br/><em>home base.</em></h2><p>Find Naiva Heights in the Karagita area of Naivasha. Contact the team before travelling for directions and arrival arrangements.</p><div className="address"><MapPin size={18}/><span>6CQV+QMV, Karagita, Naivasha, Kenya</span></div><a className="button button-outline" href="https://www.google.com/maps/search/?api=1&query=Naiva+Heights+Karagita+Naivasha" target="_blank" rel="noreferrer">Get directions <ArrowRight size={16}/></a></div></section>
 
       <section className="enquiry section-wrap" id="enquire"><div className="enquiry-copy"><p className="eyebrow">LET'S PLAN YOUR STAY</p><h2>Your next stay<br/>starts <em>right here.</em></h2><p>Tell us a little about your visit and the Naiva Heights team can get back to you with availability and rates.</p><a className="phone-link" href="tel:+254798940055"><Phone size={17}/> +254 798 940 055</a></div><form className="enquiry-form" onSubmit={submitEnquiry}><div className="form-top"><span>01</span><p>STAY ENQUIRY</p></div><label>Your name<input required value={form.name} onChange={e=>setForm({...form,name:e.target.value})} placeholder="Full name"/></label><div className="form-row"><label>Phone number<input required value={form.phone} onChange={e=>setForm({...form,phone:e.target.value})} placeholder="+254..."/></label><label>Preferred dates<input value={form.dates} onChange={e=>setForm({...form,dates:e.target.value})} placeholder="e.g. 12–15 December"/></label></div><label>Number of guests<select value={form.guests} onChange={e=>setForm({...form,guests:e.target.value})}><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></label><label>Anything else? <textarea rows={3} value={form.message} onChange={e=>setForm({...form,message:e.target.value})} placeholder="Tell us what you need..."/></label><button className="button button-dark submit-button" type="submit">Send enquiry on WhatsApp <ArrowRight size={17}/></button>{sent&&<p className="form-success"><Check size={15}/> Your WhatsApp enquiry has been prepared.</p>}<small className="form-disclaimer">Availability and rates are confirmed directly by the property.</small></form></section>
+
+      <a className="floating-whatsapp" href="https://wa.me/254798940055?text=Hello%20Naiva%20Heights%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay." target="_blank" rel="noreferrer" aria-label="Chat with Naiva Heights on WhatsApp"><span className="whatsapp-icon">◔</span><span>WhatsApp us</span></a>
 
       <footer className="footer"><div className="footer-main"><a href="#" className="brand brand-footer"><span className="brand-mark">N</span><span>NAIVA <b>HEIGHTS</b><small>STAY A LITTLE LONGER</small></span></a><p>Comfortable apartment living<br/>in the heart of Naivasha.</p><a href="https://wa.me/254798940055" className="footer-contact">Start a conversation <ArrowRight size={16}/></a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Naiva Heights. All rights reserved.</span><span>KARAGITA · NAIVASHA · KENYA</span></div></footer>
 
